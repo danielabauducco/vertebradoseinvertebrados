@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expedición NOVA — Animales por dentro</title>
+<style>
+:root{
+  --verde:#285a3d; --verde2:#dfeeda; --papel:#fbf8ef;
+  --borde:#7fa66e; --carton:#c9a874; --carton2:#a9824d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#f8f5eb;color:#183d2a;font-family:Arial,sans-serif}
+.wrap{max-width:1100px;margin:auto;padding:22px 16px 30px}
+.header{text-align:center;background:#edf5e7;border:2px dashed var(--borde);border-radius:24px;padding:18px 20px;margin-bottom:22px}
+.header h1{margin:0;font-size:clamp(28px,5vw,48px);letter-spacing:.5px}
+.header p{margin:9px 0 0;font-weight:700;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{background:var(--papel);border:2px dashed var(--borde);border-radius:20px;padding:10px;position:relative}
+.name{text-align:center;font-size:20px;font-weight:900;margin:3px 0 9px}
+.window{position:relative;height:315px;border-radius:14px;overflow:hidden;background:#eee8da;border:1px solid #d7cbb4}
+.outside,.inside{position:absolute;left:0;right:0;width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+.inside{opacity:0;background:#202020}
+.card.open .outside{opacity:0}
+.card.open .inside{opacity:1}
+.flap{
+ position:absolute;left:9px;right:9px;bottom:9px;height:78px;z-index:4;
+ border:2px solid var(--carton2);border-radius:12px;background:var(--carton);
+ color:#49351e;font-weight:900;font-size:15px;cursor:pointer;
+ box-shadow:0 4px 0 rgba(70,45,20,.18);
+ transform-origin:bottom center;
+ transition:transform .5s ease,background .25s;
+}
+.card.open .flap{transform:translateY(-155px) rotate(-2deg);background:#b88f59}
+.flap .close{display:none}
+.card.open .flap .openText{display:none}
+.card.open .flap .close{display:inline}
+.hint{text-align:center;margin:8px 0 1px;font-size:13px;color:#637565;font-weight:700}
+.question{margin:24px 0 0;padding:17px 20px;background:#f4eddb;border:2px dashed #aa9368;border-radius:20px;text-align:center;font-size:18px;font-weight:800}
+.footer{text-align:center;margin-top:16px;font-weight:900;letter-spacing:.8px;color:#285a3d}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.window{height:330px}.wrap{padding:14px 10px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="header">
+    <h1>DESCUBRÍ CÓMO SON LOS ANIMALES POR DENTRO</h1>
+    <p>TOCÁ LA TAPITA Y DESCUBRÍ QUÉ HAY DEBAJO.</p>
+  </section>
+  <section class="grid">
+
+    <article class="card">
+      <div class="name">PERRO</div>
+      <div class="window">
+        <img class="outside" src="perro_afuera.webp" alt="PERRO, vista exterior">
+        <img class="inside" src="perro_adentro.webp" alt="PERRO, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+    <article class="card">
+      <div class="name">CARACOL</div>
+      <div class="window">
+        <img class="outside" src="caracol_afuera.webp" alt="CARACOL, vista exterior">
+        <img class="inside" src="caracol_adentro.webp" alt="CARACOL, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+    <article class="card">
+      <div class="name">GATO</div>
+      <div class="window">
+        <img class="outside" src="gato_afuera.webp" alt="GATO, vista exterior">
+        <img class="inside" src="gato_adentro.webp" alt="GATO, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+    <article class="card">
+      <div class="name">MARIPOSA</div>
+      <div class="window">
+        <img class="outside" src="mariposa_afuera.webp" alt="MARIPOSA, vista exterior">
+        <img class="inside" src="mariposa_adentro.webp" alt="MARIPOSA, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+    <article class="card">
+      <div class="name">LOMBRIZ</div>
+      <div class="window">
+        <img class="outside" src="lombriz_afuera.webp" alt="LOMBRIZ, vista exterior">
+        <img class="inside" src="lombriz_adentro.webp" alt="LOMBRIZ, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+    <article class="card">
+      <div class="name">TORTUGA</div>
+      <div class="window">
+        <img class="outside" src="tortuga_afuera.webp" alt="TORTUGA, vista exterior">
+        <img class="inside" src="tortuga_adentro.webp" alt="TORTUGA, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+    <article class="card">
+      <div class="name">PEZ</div>
+      <div class="window">
+        <img class="outside" src="pez_afuera.webp" alt="PEZ, vista exterior">
+        <img class="inside" src="pez_adentro.webp" alt="PEZ, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+    <article class="card">
+      <div class="name">ARAÑA</div>
+      <div class="window">
+        <img class="outside" src="arana_afuera.webp" alt="ARAÑA, vista exterior">
+        <img class="inside" src="arana_adentro.webp" alt="ARAÑA, vista interna">
+        <button class="flap" type="button" aria-expanded="false">
+          <span class="openText">👆 TOCÁ AQUÍ</span>
+          <span class="close">↩ CERRAR</span>
+        </button>
+      </div>
+      <div class="hint">OBSERVÁ Y PENSÁ.</div>
+    </article>
+
+  </section>
+  <div class="question">🔎 <strong>AHORA PENSEMOS:</strong> ¿QUÉ TIENEN EN COMÚN ALGUNOS ANIMALES? ¿QUÉ DIFERENCIAS ENCONTRAMOS?</div>
+  <div class="footer">EXPLORAR • OBSERVAR • DESCUBRIR</div>
+</main>
+<script>
+document.querySelectorAll('.flap').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    const card = btn.closest('.card');
+    const open = card.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+</script>
+</body>
+</html>
